@@ -1,41 +1,29 @@
-# Compito 1
-# Creare uno script di python che simuli il login ad un sito di casino.
-# - si chieda all'utente: nome, cognome, ed età 
+incipit = "Benvenuti al Moguri Casinò!"
 
-print(" - - - Login del casino - - - \n\n")
+print(incipit)
 
-name = input("Inserisci il nome: ")
-surname = input("Inserisci il cognome: ")
-age = int(input("Inserisci l'etá: "))
+nome = input("Qual è il tuo nome, Kupò? ")
 
-# - si verifichi che il nome e il cognome siano più lunghi di un carattere e che l'età sia maggiore o uguale di 18 anni
-# - se tutto è corretto stampare una string di conferma altrimenti comunicare l'errore all'utente
-# - si consideri che l'utente fornirà sempre dati di tipo corretto
+if len(nome) > 1:
+    print("Ben arrivato "+ nome + " Kupò! ")
 
-## V1 
-# following all the small steps to get to the solution for the name
+    cognome = input("Come sono conosciuti i tuoi avi nel regno? ")
 
-name_len = len(name)
-surname_len = len(surname)
+    if len(cognome)>1:
+        print(nome + " " + cognome + "?")
+        print("Grande famiglia i " + cognome + ". Rendigli onore")
+        
+        eta = input("Ci siamo quasi, Kupò! Devo solo assicurarmi che tu sia abbastanza grande da poter camminare. Quanti anni hai, Kupò? ")
+        
+        if len(eta)>1 and int(eta) >= 18:
+            print("Sembra proprio che dovrò lasciarti entrare, Kupò")
+        else:
+    
+            print("Mi dispiace, Kupò")
+            print("Non accettiamo bambini, ti aspetto tra qualche anno, Kupò! Cresci e diventa forte.")
 
-is_ok_name = name_len > 1
-is_ok_surname = surname_len > 1
+    else:
+        print("Non posso farti entrare senza sapere a chi riportare le tue spoglie, Kupò")
 
-both_ok = is_ok_name and is_ok_surname 
-
-if both_ok:
-    print("Name and surname are correct")
-    print("Welcome in " + name.capitalize() + " " + surname.capitalize())
-else: 
-    print("Name or surname are too short")
-
-# now to the age part 
-
-f = age >= 18
-
-if f:
-    print(str(age) + " yo is good enough. You are a big person now! Go enjoy the world")
-else: 
-    print("I think u need to grow up a little")
-
-# *BONUS: stampare resoconto dei dati assicurandosi che nome e cognome inizino con la maiuscola*
+else:
+    print("Se non mi dici il tuo nome non entrerà mai nella storia, Kupò")
